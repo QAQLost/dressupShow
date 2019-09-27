@@ -11,35 +11,40 @@ Page({
       num:2,
       imgShow:true,
       offset:1,
-      double:true  
+      double:true,
+      badge:false  
     },{
       name:'马甲',
       type:'mj',
       num:1,
       imgShow:true,
       offset:1,
-      double:true 
+      double:true,
+      badge:false  
     },{
       name:'西服',
       type:'xf',
       num:7,
       imgShow:true,
       offset:1,
-      double:true 
+      double:true,
+      badge:false  
     },{
       name:'大衣',
       type:'dy',
       num:5,
       imgShow:true,
       offset:1,
-      double:true 
+      double:true,
+      badge:false  
     },{
       name:'西裤',
       type:'xk',
       num:4,
       imgShow:true,
       offset:1,
-      double:true 
+      double:true,
+      badge:false  
     }],
     list:['cy','mj','xf','dy','xk']
   },
@@ -52,6 +57,7 @@ Page({
   resetData(type,cur){
     let flag = false;
     let fs = false;
+    let badge = 0;
     let arr = this.data.list;
     let idx = 0;
     arr.forEach(key => {
@@ -63,13 +69,18 @@ Page({
           flag=true;
           fs=true;
         }
+        if(!flag){
+          badge=true;
+        }
         let changeOffset = "wardrobe["+idx+"].offset";
         let changeImgShow = "wardrobe["+idx+"].imgShow";
         let changeDouble = "wardrobe["+idx+"].double";
+        let changeBadge= "wardrobe["+idx+"].badge";
         this.setData({
           [changeOffset]:cur,
           [changeImgShow]:flag,
-          [changeDouble]:fs
+          [changeDouble]:fs,
+          [changeBadge]:badge
         })        
       }
       idx++;

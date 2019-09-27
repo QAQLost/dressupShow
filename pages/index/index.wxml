@@ -10,7 +10,7 @@
             <scroll-view scroll-x class="bg-green nav text-center">
                 <view wx:for="{{wardrobe}}" wx:key class="cu-item {{index==TabCur?'text-white cur':''}}"
                     bindtap="tabSelect" data-id="{{index}}">
-                    <text class="cuIcon-clothes"></text> {{item.name}}
+                    <text class="cuIcon-clothesfill {{item.badge?'text-red':''}}"></text> {{item.name}}
                 </view>
             </scroll-view>
             <view wx:for="{{wardrobe}}" wx:key wx:if="{{index==TabCur}}">
