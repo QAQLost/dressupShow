@@ -1,0 +1,65 @@
+<view>
+    <view class="title">试衣间</view>
+    <view class="showRoom">
+        <view>
+            <image src="/images/body.png" class="sameSize"></image>
+            <image src="/images/xk/xk0{{xkOffset}}.png" class="sameSize xk" hidden="{{xk}}"></image>
+            <image src="/images/cy/cy0{{cyOffset}}.png" class="sameSize cy" hidden="{{cy}}"></image>
+            <image src="/images/mj/mj0{{mjOffset}}.png" class="sameSize mj" hidden="{{mj}}"></image>
+            <image src="/images/xf/xf0{{xfOffset}}.png" class="sameSize xf" hidden="{{xf}}"></image>
+            <image src="/images/dy/dy0{{dyOffset}}.png" class="sameSize dy" hidden="{{dy}}"></image>
+        </view>
+        <view>
+            <view class="cu-bar bg-white margin-top solid-bottom">
+                <view class="action">衬衣</view>
+            </view>
+            <view class="bg-white">
+                <view class="grid col-4">
+                    <view wx:for="{{2}}" wx:key>
+                        <image src='/images/cy/cy0{{index+1}}.png' class="thudernail" bindtap="bingImgChange" data-cur="{{index+1}}" data-type="cy" data-show="false"></image>
+                    </view>
+                </view>
+            </view>
+            <view class="cu-bar bg-white margin-top solid-bottom">
+                <view class="action">马夹</view>
+            </view>
+            <view class="bg-white">
+                <view class="grid col-4">
+                    <view wx:for="{{1}}" wx:key>
+                        <image src='/images/mj/mj0{{index+1}}.png' class="thudernail" bindtap="bingImgChange" data-cur="{{index+1}}" data-type="mj" data-show="false"></image>
+                    </view>
+                </view>
+            </view>
+            <view class="cu-bar bg-white margin-top solid-bottom">
+                <view class="action">西服</view>
+            </view>
+            <view class="bg-white">
+                <view class="grid col-4">
+                    <view wx:for="{{7}}" wx:key>
+                        <image src='/images/xf/xf0{{index+1}}.png' class="thudernail" bindtap="bingImgChange" data-cur="{{index+1}}" data-type="xf" data-show="false"></image>
+                    </view>
+                </view>
+            </view>
+            <view class="cu-bar bg-white margin-top solid-bottom">
+                <view class="action">大衣</view>
+            </view>
+            <view class="bg-white">
+                <view class="grid col-4">
+                    <view wx:for="{{5}}" wx:key>
+                        <image src='/images/dy/dy0{{index+1}}.png' class="thudernail" bindtap="bingImgChange" data-cur="{{index+1}}" data-type="dy" data-show="false"></image>
+                    </view>
+                </view>
+            </view>
+            <view class="cu-bar bg-white margin-top solid-bottom">
+                <view class="action">西裤</view>
+            </view>
+            <view class="bg-white">
+                <view class="grid col-4">
+                    <view wx:for="{{4}}" wx:key>
+                        <image src='/images/xk/xk0{{index+1}}.png' class="thudernail" bindtap="bingImgChange" data-cur="{{index+1}}" data-type="xk" data-show="false"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

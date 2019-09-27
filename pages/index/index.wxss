@@ -1,0 +1,40 @@
+.title{
+  font-size: 20rpx;
+  font: 2em sans-serif;
+  text-align: center;
+  padding: 10rpx;
+  width: 100%;
+}
+.sameSize{
+  width: 200rpx;
+  height: 400rpx;
+}
+.thudernail{
+  width: 100rpx;
+  height: 150rpx;
+}
+.xk{
+  position: absolute;
+  z-index: 1;
+  left: 0;
+}
+.cy{
+  position: absolute;
+  z-index: 2;
+  left: 0;
+}
+.mj{
+  position: absolute;
+  z-index: 3;
+  left: 0;
+}
+.xf{
+  position: absolute;
+  z-index: 4;
+  left: 0;
+}
+.dy{
+  position: absolute;
+  z-index: 5;
+  left: 0;
+}
