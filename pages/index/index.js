@@ -18,7 +18,29 @@ Page({
     mjShow: true,
     xfShow: true,
     dyShow: true,
-    xkShow: true
+    xkShow: true,
+    TabCur: 0,
+    wardrobe:[{
+      name:'衬衣',
+      type:'cy',
+      num:3  
+    },{
+      name:'马甲',
+      type:'mj',
+      num:1 
+    },{
+      name:'西服',
+      type:'xf',
+      num:7
+    },{
+      name:'大衣',
+      type:'dy',
+      num:6
+    },{
+      name:'西裤',
+      type:'xk',
+      num:4
+    }]
   },
   //事件处理函数
   bingImgChange(e) {
@@ -101,5 +123,11 @@ Page({
         xkShow:fs
       })
     }
+  },
+  tabSelect(e) {
+    this.setData({
+      TabCur: e.currentTarget.dataset.id,
+      scrollLeft: (e.currentTarget.dataset.id-1)*60
+    })
   }
 })

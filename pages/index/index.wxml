@@ -9,7 +9,7 @@
             <image src="/images/xf/xf0{{xfOffset}}.png" class="sameSize xf" hidden="{{xf}}"></image>
             <image src="/images/dy/dy0{{dyOffset}}.png" class="sameSize dy" hidden="{{dy}}"></image>
         </view>
-        <view>
+        <!-- <view>
             <view class="cu-bar bg-white margin-top solid-bottom">
                 <view class="action">衬衣</view>
             </view>
@@ -57,6 +57,42 @@
                 <view class="grid col-4">
                     <view wx:for="{{4}}" wx:key>
                         <image src='/images/xk/xk0{{index+1}}.png' class="thudernail" bindtap="bingImgChange" data-cur="{{index+1}}" data-type="xk" data-show="false"></image>
+                    </view>
+                </view>
+            </view>
+        </view> -->
+        <view>
+            <scroll-view scroll-x class="bg-green nav text-center">
+                <view wx:for="{{wardrobe}}" wx:key class="cu-item {{index==TabCur?'text-white cur':''}}" bindtap="tabSelect" data-id="{{index}}">
+                    <text class="cuIcon-clothes"></text> {{item.name}}
+                </view>
+                <!-- 
+                <view class="cu-item {{0==TabCur?'text-white cur':''}}" bindtap="tabSelect" data-id="0">
+                    <text class="cuIcon-camerafill"></text> 衬衣
+                </view>
+                <view class="cu-item {{1==TabCur?'text-white cur':''}}" bindtap="tabSelect" data-id="1">
+                    <text class="cuIcon-upstagefill"></text> 马甲
+                </view>
+                <view class="cu-item {{2==TabCur?'text-white cur':''}}" bindtap="tabSelect" data-id="2">
+                    <text class="cuIcon-clothesfill"></text> 西服
+                </view>
+                <view class="cu-item {{3==TabCur?'text-white cur':''}}" bindtap="tabSelect" data-id="3">
+                    <text class="cuIcon-clothesfill"></text> 大衣
+                </view>
+                <view class="cu-item {{4==TabCur?'text-white cur':''}}" bindtap="tabSelect" data-id="4">
+                    <text class="cuIcon-clothesfill"></text> 西裤
+                </view>
+                 -->
+            </scroll-view>
+            <view wx:for="{{wardrobe}}" wx:key wx:if="{{index==TabCur}}">
+                <view>
+                    <view class="grid col-4">
+                        <view wx:for="{{item.num}}" wx:key wx:for-item="cell">
+                            <image src='/images/{{item.type}}/{{item.type}}0{{index+1}}.png' class="thudernail"
+                                bindtap="bingImgChange" data-cur="{{index+1}}" data-type="{{item.type}}"
+                                data-show="false"></image>
+                            <view class="cu-tag badge cuIcon-female bg-pink"></view>
+                        </view>
                     </view>
                 </view>
             </view>
