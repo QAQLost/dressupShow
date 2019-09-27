@@ -93,20 +93,33 @@ Page({
     })
   },
   clearAll() {
-    let arr = this.data.wardrobe;
-    let idx = 0;
-    arr.forEach(key => {
-      let changeOffset = "wardrobe[" + idx + "].offset";
-      let changeImgShow = "wardrobe[" + idx + "].imgShow";
-      let changeDouble = "wardrobe[" + idx + "].double";
-      let changeBadge = "wardrobe[" + idx + "].badge";
-      this.setData({
-        [changeOffset]: 1,
-        [changeImgShow]: true,
-        [changeDouble]: true,
-        [changeBadge]: false
-      })
-      idx++;
-    });
+    let that = this;
+    wx.showModal({
+      title: '重置',
+      content: '是否要重新换装？',
+      success(res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+          let arr = that.data.wardrobe;
+          let idx = 0;
+          arr.forEach(key => {
+            let changeOffset = "wardrobe[" + idx + "].offset";
+            let changeImgShow = "wardrobe[" + idx + "].imgShow";
+            let changeDouble = "wardrobe[" + idx + "].double";
+            let changeBadge = "wardrobe[" + idx + "].badge";
+            that.setData({
+              [changeOffset]: 1,
+              [changeImgShow]: true,
+              [changeDouble]: true,
+              [changeBadge]: false
+            })
+            idx++;
+          });
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+
   }
 })
