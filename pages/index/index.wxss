@@ -51,3 +51,16 @@ page{
   color: var(--white);
   margin-top: -210rpx;
 }
+.boder-raduis{
+  position: fixed;
+  width: 70rpx;
+  z-index: 2;
+  height: 70rpx;
+  border-radius: 50%;
+  line-height: 70rpx;
+  font-size: 50rpx;
+  right: 10%;
+  bottom: 5%;
+  margin: auto;
+  padding: 0;
+}

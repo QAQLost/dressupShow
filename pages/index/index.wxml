@@ -27,4 +27,7 @@
             </view>
         </view>
     </view>
+    <view class="del">
+        <button class="cu-btn cuIcon-delete bg-grey shadow boder-raduis" bindtap="clearAll"></button>
+    </view>
 </view>
