@@ -23,7 +23,7 @@ Page({
     wardrobe:[{
       name:'衬衣',
       type:'cy',
-      num:3  
+      num:2  
     },{
       name:'马甲',
       type:'mj',
@@ -35,7 +35,7 @@ Page({
     },{
       name:'大衣',
       type:'dy',
-      num:6
+      num:5
     },{
       name:'西裤',
       type:'xk',
@@ -52,11 +52,11 @@ Page({
     if (type == "cy") {
       let offset = this.data.cyOffset; 
       let isShow  = this.data.cyShow;   
-      if ((offset == cur)&&show&&!isShow) {
+      if ((offset == cur)&&!isShow) {
         flag = true;
         fs=true;
       }
-      //console.log("before:"+offset+",cur:"+cur+",hidden:"+flag,",fs:"+fs+",isShow:"+isShow);
+      console.log("before:"+offset+",cur:"+cur+",hidden:"+flag,",fs:"+fs+",isShow:"+isShow);
       this.setData({
         cyOffset: cur,
         cy: flag,
@@ -67,7 +67,7 @@ Page({
     if (type == "mj") {
       let offset = this.data.mjOffset;
       let isShow  = this.data.mjShow;   
-      if ((offset == cur)&&show&&!isShow) {
+      if ((offset == cur)&&!isShow) {
         flag = true;
         fs=true;
       }
@@ -82,7 +82,7 @@ Page({
     if (type == "xf") {
       let offset = this.data.xfOffset;
       let isShow  = this.data.xfShow;   
-      if ((offset == cur)&&show&&!isShow) {
+      if ((offset == cur)&&!isShow) {
         flag = true;
         fs=true;
       }
@@ -97,7 +97,7 @@ Page({
     if (type == "dy") {
       let offset = this.data.dyOffset;
       let isShow  = this.data.dyShow;   
-      if ((offset == cur)&&show&&!isShow) {
+      if ((offset == cur)&&!isShow) {
         flag = true;
         fs=true;
       }
@@ -112,7 +112,7 @@ Page({
     if (type == "xk") {
       let offset = this.data.xkOffset;
       let isShow  = this.data.xkShow;   
-      if ((offset == cur)&&show&&!isShow) {
+      if ((offset == cur)&&!isShow) {
         flag = true;
         fs=true;
       }

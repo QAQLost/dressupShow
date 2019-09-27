@@ -9,80 +9,12 @@
             <image src="/images/xf/xf0{{xfOffset}}.png" class="sameSize xf" hidden="{{xf}}"></image>
             <image src="/images/dy/dy0{{dyOffset}}.png" class="sameSize dy" hidden="{{dy}}"></image>
         </view>
-        <!-- <view>
-            <view class="cu-bar bg-white margin-top solid-bottom">
-                <view class="action">衬衣</view>
-            </view>
-            <view class="bg-white">
-                <view class="grid col-4">
-                    <view wx:for="{{2}}" wx:key>
-                        <image src='/images/cy/cy0{{index+1}}.png' class="thudernail" bindtap="bingImgChange" data-cur="{{index+1}}" data-type="cy" data-show="false"></image>
-                    </view>
-                </view>
-            </view>
-            <view class="cu-bar bg-white margin-top solid-bottom">
-                <view class="action">马夹</view>
-            </view>
-            <view class="bg-white">
-                <view class="grid col-4">
-                    <view wx:for="{{1}}" wx:key>
-                        <image src='/images/mj/mj0{{index+1}}.png' class="thudernail" bindtap="bingImgChange" data-cur="{{index+1}}" data-type="mj" data-show="false"></image>
-                    </view>
-                </view>
-            </view>
-            <view class="cu-bar bg-white margin-top solid-bottom">
-                <view class="action">西服</view>
-            </view>
-            <view class="bg-white">
-                <view class="grid col-4">
-                    <view wx:for="{{7}}" wx:key>
-                        <image src='/images/xf/xf0{{index+1}}.png' class="thudernail" bindtap="bingImgChange" data-cur="{{index+1}}" data-type="xf" data-show="false"></image>
-                    </view>
-                </view>
-            </view>
-            <view class="cu-bar bg-white margin-top solid-bottom">
-                <view class="action">大衣</view>
-            </view>
-            <view class="bg-white">
-                <view class="grid col-4">
-                    <view wx:for="{{5}}" wx:key>
-                        <image src='/images/dy/dy0{{index+1}}.png' class="thudernail" bindtap="bingImgChange" data-cur="{{index+1}}" data-type="dy" data-show="false"></image>
-                    </view>
-                </view>
-            </view>
-            <view class="cu-bar bg-white margin-top solid-bottom">
-                <view class="action">西裤</view>
-            </view>
-            <view class="bg-white">
-                <view class="grid col-4">
-                    <view wx:for="{{4}}" wx:key>
-                        <image src='/images/xk/xk0{{index+1}}.png' class="thudernail" bindtap="bingImgChange" data-cur="{{index+1}}" data-type="xk" data-show="false"></image>
-                    </view>
-                </view>
-            </view>
-        </view> -->
         <view>
             <scroll-view scroll-x class="bg-green nav text-center">
-                <view wx:for="{{wardrobe}}" wx:key class="cu-item {{index==TabCur?'text-white cur':''}}" bindtap="tabSelect" data-id="{{index}}">
+                <view wx:for="{{wardrobe}}" wx:key class="cu-item {{index==TabCur?'text-white cur':''}}"
+                    bindtap="tabSelect" data-id="{{index}}">
                     <text class="cuIcon-clothes"></text> {{item.name}}
                 </view>
-                <!-- 
-                <view class="cu-item {{0==TabCur?'text-white cur':''}}" bindtap="tabSelect" data-id="0">
-                    <text class="cuIcon-camerafill"></text> 衬衣
-                </view>
-                <view class="cu-item {{1==TabCur?'text-white cur':''}}" bindtap="tabSelect" data-id="1">
-                    <text class="cuIcon-upstagefill"></text> 马甲
-                </view>
-                <view class="cu-item {{2==TabCur?'text-white cur':''}}" bindtap="tabSelect" data-id="2">
-                    <text class="cuIcon-clothesfill"></text> 西服
-                </view>
-                <view class="cu-item {{3==TabCur?'text-white cur':''}}" bindtap="tabSelect" data-id="3">
-                    <text class="cuIcon-clothesfill"></text> 大衣
-                </view>
-                <view class="cu-item {{4==TabCur?'text-white cur':''}}" bindtap="tabSelect" data-id="4">
-                    <text class="cuIcon-clothesfill"></text> 西裤
-                </view>
-                 -->
             </scroll-view>
             <view wx:for="{{wardrobe}}" wx:key wx:if="{{index==TabCur}}">
                 <view>
@@ -91,7 +23,26 @@
                             <image src='/images/{{item.type}}/{{item.type}}0{{index+1}}.png' class="thudernail"
                                 bindtap="bingImgChange" data-cur="{{index+1}}" data-type="{{item.type}}"
                                 data-show="false"></image>
-                            <view class="cu-tag badge cuIcon-female bg-pink"></view>
+                            <view wx:if="{{item.type=='cy'}}">
+                                <view class="cu-tag cuIcon-roundcheck bg-green top-position" hidden="{{cy}}"
+                                    wx:if="{{index+1==cyOffset }}"></view>
+                            </view>
+                            <view wx:if="{{item.type=='mj'}}">
+                                <view class="cu-tag cuIcon-roundcheck bg-green top-position" hidden="{{mj}}"
+                                    wx:if="{{index+1==mjOffset}}"></view>
+                            </view>
+                            <view wx:if="{{item.type=='xf'}}">
+                                <view class="cu-tag cuIcon-roundcheck bg-green top-position" hidden="{{xf}}"
+                                    wx:if="{{index+1==xfOffset}}"></view>
+                            </view>
+                            <view wx:if="{{item.type=='dy'}}">
+                                <view class="cu-tag cuIcon-roundcheck bg-green top-position" hidden="{{dy}}"
+                                    wx:if="{{index+1==dyOffset}}"></view>
+                            </view>
+                            <view wx:if="{{item.type=='xk'}}">
+                                <view class="cu-tag cuIcon-roundcheck bg-green top-position" hidden="{{xk}}"
+                                    wx:if="{{index+1==xkOffset}}"></view>
+                            </view>
                         </view>
                     </view>
                 </view>
