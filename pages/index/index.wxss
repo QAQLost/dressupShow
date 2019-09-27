@@ -41,3 +41,13 @@
 page{
   background: #fff;
 }
+.top-position{
+  border-radius: 200rpx;
+  position: relative;
+  top: -10rpx;
+  right: -10rpx;
+  padding: 0rpx 10rpx;
+  height: 28rpx;
+  color: var(--white);
+  margin-top: -210rpx;
+}
